@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "26713cda-a96d-426e-bef8-ff70d669c340",
+		"name": "3rd Party Apis",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37784488"
+	},
+	"item": [
+		{
+			"name": "Query Payment Status",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cG4iOiI4MDYyMjM0MTQxMjYiLCJlbWFpbCI6Illhc2hAZGZvZWluZGlhLmNvbSIsImlhdCI6MTY5NTk3ODMyNX0.aUd7axXptvZNDzFgUHYiN844N_EpNNaZy5G47T0gnVs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.ipospays.tech/v1/queryPaymentStatus?tpn=806223414126&transactionReferenceId=1371F8745984813",
+					"protocol": "https",
+					"host": [
+						"api",
+						"ipospays",
+						"tech"
+					],
+					"path": [
+						"v1",
+						"queryPaymentStatus"
+					],
+					"query": [
+						{
+							"key": "tpn",
+							"value": "806223414126"
+						},
+						{
+							"key": "transactionReferenceId",
+							"value": "1371F8745984813"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,48 @@
+openapi: 3.1.0
+info:
+  title: SpinPOS API
+  description: API for handling terminal transactions with SpinPOS.
+  version: 1.0.0
+servers:
+  - url: https://test.sample.net:443/spin
+paths:
+  /cgi.html:
+    post:
+      summary: Process Terminal Transaction
+      description: Handles terminal transactions such as credit card payments.
+      operationId: processTerminalTransaction
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              type: object
+              properties:
+                TerminalTransaction:
+                  type: object
+                  properties:
+                    PaymentType:
+                      type: string
+                      enum:
+                        - Credit
+                      description: The type of payment being processed.
+                      example: Credit
+      responses:
+        '200':
+          description: Transaction processed successfully.
+          content:
+            application/xml:
+              schema:
+                type: object
+                properties:
+                  Response:
+                    type: object
+                    properties:
+                      Status:
+                        type: string
+                        description: The status of the transaction.
+                        example: Success
+                      TransactionID:
+                        type: string
+                        description: The unique identifier for the transaction.
+                        example: 1234567890

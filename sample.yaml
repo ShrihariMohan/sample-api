@@ -1,0 +1,57 @@
+openapi: 3.1.0
+info:
+  title: Simple JSON API
+  description: An example API that accepts a JSON payload.
+  version: 1.0.0
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /submit-data:
+    post:
+      summary: Submit JSON Data
+      description: Accepts JSON input and processes it.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              id: "123"
+              name: "Sample Item"
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: The unique identifier of the item.
+                name:
+                  type: string
+                  description: The name of the item.
+              required:
+                - id
+                - name
+      responses:
+        '200':
+          description: Successful submission of JSON data.
+          content:
+            application/json:
+              example:
+                message: "Data submitted successfully"
+                status: "success"
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  status:
+                    type: string
+        '400':
+          description: Invalid input.
+          content:
+            application/json:
+              example:
+                error: "Invalid JSON format"
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
