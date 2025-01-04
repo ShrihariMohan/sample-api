@@ -15,7 +15,7 @@ export async function generateDocs() {
 
   await Promise.all([
     OpenAPI.generateFiles({
-      input: [ './collection.yaml'],
+      input: [ './museum.yaml'],
       output: './content/docs/openapi',
       per: 'operation',
     }),
